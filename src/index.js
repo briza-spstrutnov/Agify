@@ -11,7 +11,7 @@ app.use(express.static('www'));
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    return res.render('index', { title: 'Agify' });
+    return res.render('index', { title: 'Name API' });
 });
 
 app.use((req, res) => {

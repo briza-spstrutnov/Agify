@@ -15,8 +15,10 @@ function search(name){
     .then(data => {
         if(data.gender == 'male'){
             genderResult.innerHTML = `Pohlaví: muž`;    
+        }else if(data.gender == 'female'){
+            genderResult.innerHTML = `Pohlaví: žena`;
         }else{
-            genderResult.innerHTML = `Pohlaví: žena`
+            genderResult.innerHTML = `Pohlaví: neexistuje`;
         }
     });
 }
