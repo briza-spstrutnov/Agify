@@ -2,6 +2,7 @@ function search(name){
     let nameResult = document.getElementById('name-result');
     let ageResult = document.getElementById('age');
     let genderResult = document.getElementById('gender');
+    let countryResult = document.getElementById('country');
 
     fetch(`https://api.agify.io/?name=${name}`)
     .then(response => response.json())
@@ -20,5 +21,12 @@ function search(name){
         }else{
             genderResult.innerHTML = `Pohlaví: neexistuje`;
         }
+    });
+
+    fetch(`https://api.nationalize.io/?name=${name}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        countryResult.innerHTML = `Země: ${data.country[0].country_id}`;
     });
 }
